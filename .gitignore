@@ -1,0 +1,9 @@
+/.*
+!.gitignore
+!/.bowerrc
+!/.db
+/node_modules
+.DS_Store
+/www/styles/styles.css
+/www/styles/styles.css.map
+
