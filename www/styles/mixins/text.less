@@ -1,0 +1,153 @@
+/* Text utilities
+ *  - long-wrap              force wraps long lines of text
+ *  - font-size              setting relative font size
+ *  - text-overflow          text ellipsis shorthand
+ *  - gradient-text          text with gradient color, only webkit
+ *  - text-decoration        modern text decoration (supporting style and color)
+ *  - anchor-color           changes anchor color including its states
+ *  - anchor-color-inverse   sets color of the anchors inverse to default
+ *  - hover-underline        transitioned underline on hover
+ *  - hover-no-underline     transitioned no-underline on hover
+ */
+
+
+/**
+ * Force wraps long lines of text.
+ */
+.long-wrap() {
+	white-space: pre;           /* CSS 2.0 */
+	white-space: pre-wrap;      /* CSS 2.1 */
+	white-space: pre-line;      /* CSS 3.0 */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap;  /* HP Printers */
+	word-wrap: break-word;      /* IE 5+ */
+}
+
+/**
+ * Sets font-size to size defined in px (@fs) using rem unit; requires global variable @font-base-size to be set.
+ */
+.font-size(@fs;) {
+	font-size: (@fs / @font-base-size) * 1rem;
+}
+/*
+ * Sets font-size to size defined in px (@fs) relatively to @fbs in %; usefull for icons etc. where font-size depends on
+ * parent not on root element.
+ */
+.font-size(@fs; @fbs) {
+	font-size: (@fs / @fbs) * 100%;
+}
+
+/**
+ * Ellipsis shorthand.
+ */
+.text-overflow() {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/**
+ * Gradient text, not supported by autoprefixer.
+ */
+.gradient-text(@dir: top; @start-color: #eee; @end-color: #aaa) {
+	background: -webkit-linear-gradient(@dir, @start-color, @end-color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/**
+ * Modern text decoration, not supported by autoprefixer as shorthand property.
+ */
+.text-decoration(@text-decoration) {
+	-webkit-text-decoration: @text-decoration;
+	-moz-text-decoration: @text-decoration;
+	text-decoration: @text-decoration;
+}
+
+/**
+ * Changes anchor color including its states.
+ */
+.anchor-color(@color: @color-link; @hover: @color-link-hover) {
+	color: @color;
+
+	&:hover, &:focus, &:active { color: @hover; }
+}
+
+/**
+ * Sets color of the anchors inverse to default.
+ */
+.anchor-color-inverse() {
+	.anchor-color(@color-link-hover; @color-link);
+}
+
+/**
+ * Underlines the link (or whatever element) on hover using modern text-decoration and transition.
+ */
+.hover-underline(@from: transparent; @to: currentColor; @selector: ~'') {
+	text-decoration:none; text-decoration-color:transparent;
+
+	& when (@selector = ~'') {
+		.text-decoration(underline solid @from);
+
+		transition+:text-decoration-color 300ms ease;
+
+		&:hover, &:focus {
+			text-decoration:underline;
+			.text-decoration(underline solid @to);
+		}
+	}
+	& when not (@selector = ~'') {
+		@{selector} {
+			text-decoration:none;
+			.text-decoration(underline solid @from);
+
+			transition+:text-decoration-color 300ms ease;
+		}
+
+		&:hover, &:focus {
+			text-decoration:none;
+
+			@{selector} {
+				text-decoration:underline;
+				.text-decoration(underline solid @to);
+			}
+		}
+	}
+}
+
+/**
+ * Removes underline of the link on hover using modern text-decoration and transition.
+ */
+.hover-no-underline(@from: currentColor; @to: transparent; @selector: ~'') {
+	& when (@selector = ~'') {
+		text-decoration: underline;
+		.text-decoration(underline solid @from);
+
+		transition+: text-decoration-color 300ms ease;
+
+		&:hover, &:focus {
+			text-decoration: none;
+			.text-decoration(underline solid @to);
+		}
+	}
+	& when not (@selector = ~'') {
+		text-decoration: none;
+		text-decoration-color: transparent;
+
+		@{selector} {
+			text-decoration: underline;
+			.text-decoration(underline solid @from);
+
+			transition+: text-decoration-color 300ms ease;
+		}
+
+		&:hover, &:focus {
+			@{selector} {
+				text-decoration: none;
+				.text-decoration(underline solid @to);
+			}
+		}
+	}
+}

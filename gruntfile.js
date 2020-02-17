@@ -12,7 +12,6 @@ module.exports = function(grunt) {
 			customTasksDir: 'grunt/tasks'
 		},
 		data: {
-			bower: grunt.file.readJSON('./.bowerrc'),
 			stylesBasepath: 'www/styles'
 		}
 	});

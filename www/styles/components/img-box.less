@@ -1,0 +1,56 @@
+/**
+* Komponenta pro prostor vymezený pro obrázek. Výchozí chování je vycentrování zmenšeného obrázku
+*/
+.img-box {
+	&__img {
+		&, .wysiwyg & {
+			width: 100%;
+			height: 100%;
+			object-fit: scale-down;
+		}
+	}
+
+	&--lazy {
+		position: relative;
+		overflow: hidden;
+		background: @color-gray;
+
+		.img-box__img {
+			position: relative;
+			z-index: 2;
+		}
+	}
+
+	&--fixed-ratio {
+		position: relative;
+
+		&:before {
+			display: block;
+			height: 0;
+			padding-top: 100%;
+			content: "";
+		}
+		.img-box__img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&--cover &__img { object-fit: cover; }
+	&--contain &__img { object-fit: contain; }
+
+	// fallback
+	.no-objectfit & {
+		position:relative;
+
+		&__img { .img--responsive; }
+		&--fixed-ratio &__img { .img--center; }
+
+		&--cover { overflow: hidden; }
+		&--cover .img-box__img {
+			width: 100%;
+			max-height: none;
+		}
+	}
+}

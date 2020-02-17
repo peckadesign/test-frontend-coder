@@ -1,0 +1,87 @@
+/**
+ * Utilities
+ */
+
+// Margin
+.u-m-0  { margin: 0 !important; }
+.u-mt-0 { margin-top: 0 !important; }
+.u-mb-0 { margin-bottom: 0 !important; }
+.u-ml-0 { margin-left: 0 !important; }
+.u-mr-0 { margin-right: 0 !important; }
+
+.u-mt-10 { margin-top: 10px !important; }
+.u-mb-10 { margin-bottom: 10px !important; }
+.u-ml-10 { margin-left: 10px !important; }
+.u-mr-10 { margin-right: 10px !important; }
+
+// Padding
+.u-p-0  { padding: 0 !important; }
+.u-pt-0 { padding-top: 0 !important; }
+.u-pb-0 { padding-bottom: 0 !important; }
+.u-pl-0 { padding-left: 0 !important; }
+.u-pr-0 { padding-right: 0 !important; }
+
+// Width
+.u-w-full { width: 100% !important; }
+
+// Display
+.u-display-table { display: table !important; }
+.u-display-block { display: block !important; }
+.u-display-flex { display: flex !important; }
+
+// Position
+.u-relative { position: relative !important; }
+.u-static   { position: static !important; }
+
+.sr-only { position: absolute !important; width: 1px; height: 1px; margin: 0; padding: 0; border: 0; clip: rect(0,0,0,0); overflow: hidden; } // screen-reader only
+.no-js .js-only,
+.js .js-hide,
+.u-hidden\@screen, .u-hidden { display: none !important; }
+
+.js .js-init-hide { display: none; } // není záměrně !important, aby bylo možno přebýt
+
+.u-hidden\@w590-max {
+	@media @w590-max {
+		display: none !important;
+	}
+}
+.u-hidden\@w768-max {
+	@media @w768-max {
+		display: none !important;
+	}
+}
+
+.u-hidden\@w768 {
+	@media @w768 {
+		display: none !important;
+	}
+}
+
+
+// Float
+.u-pull-right  { float: right; }
+.u-pull-left   { float: left; }
+
+.u-clear-left  { clear: left; }
+.u-clear-right { clear: right; }
+.u-clear-both  { clear: both; }
+.u-clearfix    { .cfx(); }
+
+.u-break { display: block; width: 100%; height: 0; clear: both; overflow: hidden; visibility: hidden; margin: 0 !important; padding: 0 !important; }
+
+.u-block-center { margin-left: auto !important; margin-right: auto !important; }
+.u-block-center\@w768-max {
+	@media @w768-max { margin-left: auto !important; margin-right: auto !important; }
+}
+
+// Text colors
+.u-green   { color: @color-green !important; }
+.u-red     { color: @color-red !important; }
+.u-gray    { color: @color-gray !important; }
+
+// Text properties
+.u-center { text-align: center !important; }
+.u-left   { text-align: left !important; }
+.u-right  { text-align: right !important; }
+
+.u-nowrap { white-space: nowrap; }

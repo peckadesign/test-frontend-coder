@@ -1,0 +1,55 @@
+// GRID LIST
+.grid-list(@items; @spacing: 0) {
+
+	&__list {
+		display: flex;
+		flex-flow: row wrap;
+	}
+	&__item {
+		flex: 0 0 auto;
+		width: 100% / @items;
+		box-sizing: border-box;
+	}
+
+	// spacing
+	& when (@spacing > 0) {
+		.grid-list-set-spacing(@spacing);
+	}
+}
+
+// set spacing
+.grid-list-set-spacing(@spacing) when (ispercentage(@spacing)) {
+	@spacingHalf:(@spacing / 2);
+
+	&__list {
+		margin-left: -1 * @spacingHalf;
+		margin-right: -1 * @spacingHalf;
+	}
+	&__item {
+		padding-left: @spacingHalf / (100% + @spacing) * 100%;
+		padding-right: @spacingHalf / (100% + @spacing) * 100%;
+	}
+}
+.grid-list-set-spacing(@spacing) when (default()) {
+	@spacingHalf:(@spacing / 2);
+
+	&__list {
+		margin-left: -1 * @spacingHalf;
+		margin-right: -1 * @spacingHalf;
+	}
+	&__item {
+		padding-left: @spacingHalf;
+		padding-right: @spacingHalf;
+	}
+}
+
+// set align
+.grid-list-set-align(@align) {
+	&__list when (@align = center) { justify-content: center; }
+	&__list when (@align = left)   { justify-content: flex-start; }
+}
+
+// item count
+.grid-list-set-items(@items) {
+	&__item { width: 100% / @items; }
+}

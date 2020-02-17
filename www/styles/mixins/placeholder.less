@@ -1,0 +1,17 @@
+// placeholder styling, not supported by autoprefixer
+.placeholder(@rules) { @rules(); }
+.placeholder(@selector, @rules) {
+	& when (@selector = ~'') {
+		&::-webkit-input-placeholder { .placeholder(@rules); }
+		&::-moz-placeholder          { .placeholder(@rules); }
+		&:-moz-placeholder           { .placeholder(@rules); }
+		&:-ms-input-placeholder      { .placeholder(@rules); }
+	}
+
+	& when not (@selector = ~'') {
+		@{selector}::-webkit-input-placeholder { .placeholder(@rules); }
+		@{selector}::-moz-placeholder { .placeholder(@rules); }
+		@{selector}:-moz-placeholder { .placeholder(@rules); }
+		@{selector}:-ms-input-placeholder { .placeholder(@rules); }
+	}
+}

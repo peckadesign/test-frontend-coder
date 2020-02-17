@@ -1,0 +1,21 @@
+// CSS COLUMNS
+// pořadí prvků po sloupcích
+.css-columns(@count:2; @gap: 20px) {
+	column-count: @count;
+	column-gap: @gap;
+}
+
+// prevence zalamování
+.columns-no-break-inside(@selector: ~'') {
+	& when (@selector = ~'') {
+		break-inside: avoid-column; // spec
+		page-break-inside: avoid; // FF
+	}
+
+	& when not (@selector = ~'') {
+		@{selector} {
+			break-inside: avoid-column; // spec
+			page-break-inside: avoid; // FF
+		}
+	}
+}
