@@ -61,7 +61,7 @@ img {
 	}
 }
 
-img.lazy + .spinner {
+img.js-lazy + .spinner {
 	opacity: 1;
 	transition: opacity 500ms ease;
 }
@@ -76,8 +76,6 @@ img.js-lazy {
 			opacity: 0;
 			animation-play-state: paused;
 		}
-
-		&.js-lazy--product-box + .img-box__img--lqip { animation: fadeOutLqip 300ms ease-in 0ms both; }
 	}
 
 	.no-js & { display: none !important; }
