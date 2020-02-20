@@ -1,0 +1,27 @@
+.nav {
+	flex: 1 1 auto;
+}
+
+.nav__list {
+	margin: 0;
+}
+
+.nav__item {
+	padding: 0;
+
+	&:before { display: none; }
+}
+
+.nav__link {
+	.hover-underline();
+	color: #fff;
+	.font-size(13);
+	font-weight: bold;
+	display: inline-block;
+	padding: 3px 5px;
+
+	@media @w768 {
+		.font-size(14);
+		padding: 3px 30px;
+	}
+}

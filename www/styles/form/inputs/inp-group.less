@@ -1,0 +1,29 @@
+.inp-group {
+	display: flex;
+	margin-left: -5px;
+	align-items: flex-start;
+
+	&__item {
+		margin-left: 5px;
+
+		&--input { flex: 1 1 auto; }
+		&--btn {
+			flex: 0 0 auto;
+			min-width: 0;
+		}
+	}
+
+	&--no-gap {
+		&& { margin-left: 0; }
+
+		.inp-group__item { margin-left: 0; }
+		.inp-group__item--btn { margin-left: -1px; }
+	}
+
+
+	@media @w768 {
+		margin-left: -10px;
+
+		&__item { margin-left: 10px; }
+	}
+}

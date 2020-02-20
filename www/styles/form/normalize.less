@@ -1,0 +1,63 @@
+form, fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+button, input, select, textarea {
+	font-size: 1rem;
+	margin: 0;
+	box-sizing: border-box;
+	vertical-align: baseline;
+	-webkit-font-smoothing: antialiased;
+	border-radius: 0;
+}
+[type="submit"]:focus { outline: none; }
+
+/**
+ * 1. Odstranění tlačítek +- ve FireFoxu
+ * 2. Odstranění vnitřního stínu v Safari (kvůli iOS 10 nesmí být textfield)
+ */
+[type="number"] {
+	-moz-appearance: textfield; /* 1 */
+	-webkit-appearance: none;   /* 2 */
+}
+
+/**
+ * 1. Odstranění křížku pro smazání a kulatých rohů v Safari (kvůli iOS 10 nesmí být textfield)
+ */
+[type="search"] {
+	-webkit-appearance: none; /* 1 */
+}
+
+/**
+ * 1. Odstranění +- v Chromu
+ */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none; /* 1 */
+	margin: 0; /* 1 */
+}
+
+textarea {
+	resize: vertical;
+	vertical-align: top;
+}
+
+/**
+ * 1. Odstraní šipku pro rozbalení v Chrome a FF (pomocí Autoprefixeru)
+ * 2. Odstraní šipku pro rozbalení v IE/Edge
+ * 3. Odstraní tečkovaný okraj ve FF kolem option při focusu klávesnicí
+ */
+select.inp-text {
+	appearance: none; /* 1 */
+	text-overflow: ellipsis;
+
+	&::-ms-expand {
+		display: none; /* 2 */
+	}
+	&:-moz-focusring {
+		color: transparent; /* 3 */
+		text-shadow: 0 0 0 @color-default; /* 3 */
+	}
+}

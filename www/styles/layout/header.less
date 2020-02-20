@@ -1,0 +1,28 @@
+.header {
+	background: @color-red;
+}
+
+.header__inner {
+	height: 70px;
+
+	@media @w768 {
+		height: 110px;
+	}
+}
+
+.header__logo {
+	width: 20.9%;
+	height: 70%;
+	min-width: 70px;
+	max-width: 130px;
+	margin: 0 5.373% 0 0;
+	flex: 0 1 auto;
+
+	svg {
+		fill: #fff;
+	}
+
+	@media @w768 {
+		margin-right: 2.238%;
+	}
+}

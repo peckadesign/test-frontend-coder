@@ -1,0 +1,28 @@
+@import "header";
+@import "footer";
+
+@import "menu/nav";
+@import "menu/footer-nav";
+
+/* LAYOUT */
+.main {
+	text-align: left;
+}
+
+.l-in-box {
+	position: relative;
+	max-width: 1380px;
+	padding: 0 10px;
+
+	&, &__inner {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@media @w480 {
+		padding: 0 20px;
+	}
+
+	@media @w768 {
+		padding: 0 30px;
+	}
+}

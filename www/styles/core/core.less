@@ -1,20 +1,15 @@
-//@import (inline, less) "animate.css";
-//@import "icons";
-
 @import "utilities";
 @import "utilities-project";
 
-//@import "offcanvas";
-
-//@import "content";
+@import "content";
 @import "img";
-//@import "collapsable";
-//@import "spinner";
-//@import "pdbox";
-
-//@import "grid";
+@import "icon";
 
 /* MISC */
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
 .js.disable-transition {
-	&, * { transition:none !important; }
+	&, * { transition: none !important; }
 }

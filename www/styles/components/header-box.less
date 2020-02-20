@@ -1,0 +1,23 @@
+/* HEADER BOXY */
+.header-box {
+	flex: 0 0 auto;
+	margin: 0 10px;
+
+	@media @w480 {
+		margin: 0 16px;
+	}
+
+	@media @w768 {
+		margin: 0 22px;
+	}
+}
+
+.header-box__title-link {
+	svg {
+		transition: fill 300ms ease;
+	}
+
+	&:hover svg {
+		fill: @color-default;
+	}
+}

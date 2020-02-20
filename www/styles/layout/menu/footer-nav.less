@@ -1,0 +1,28 @@
+.footer-nav {
+	margin-bottom: 1em;
+
+	@media @w768 {
+		margin: 0 1em 0 0;
+		flex: 0 1 auto;
+		text-align: left;
+	}
+}
+
+.footer-nav__nav {
+
+}
+
+.footer-nav__item {
+	padding: 0;
+
+	&:before { display: none; }
+
+	@media @w960 {
+		padding-right: 30px;
+	}
+}
+
+.footer-nav__link {
+	color: #fff;
+	.hover-underline();
+}

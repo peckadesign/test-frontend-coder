@@ -1,0 +1,50 @@
+.btn {
+	@btn-font-size: 14px;
+
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	padding: 0 20px;
+	border: 1px solid transparent;
+	border-radius: 0;
+	font: 600 @btn-font-size/1.25 @font-alternative;
+	color: #fff;
+	vertical-align: middle;
+	text-decoration: none;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: background-color 300ms ease;
+
+	&:hover, &:focus {
+		color: #fff;
+		outline: none;
+		text-decoration: none;
+	}
+
+	@media @ie10-11 {
+		&__inner { height:1px; }
+	}
+}
+
+.btn--primary {
+
+}
+
+.btn__inner {
+	display: flex;
+	min-height: 48px;
+	padding: 5px 0;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.btn--secondary {
+	@btnSecondaryColor: #454545;
+
+	background: @btnSecondaryColor;
+
+	&:hover, &:focus {
+		background: lighten(@btnSecondaryColor, 5%);
+	}
+}
