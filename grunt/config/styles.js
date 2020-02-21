@@ -6,13 +6,6 @@ module.exports = {
 			'less:common',
 			'postcss:development'
 		]
-	},
-
-	production: {
-		tasks: [
-			'less:common',
-			'postcss:production'
-		]
-	},
+	}
 
 };

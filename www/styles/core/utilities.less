@@ -22,16 +22,17 @@
 .u-pr-0 { padding-right: 0 !important; }
 
 // Width
-.u-w-full { width: 100% !important; }
+.u-w-100p { width: 100% !important; }
 
 // Display
-.u-display-table { display: table !important; }
-.u-display-block { display: block !important; }
-.u-display-flex { display: flex !important; }
+.u-d-t { display: table !important; }
+.u-d-b { display: block !important; }
+.u-d-f { display: flex !important; }
+.u-d-f\@960 { @media @w960 { display: flex !important; } }
 
 // Position
-.u-relative { position: relative !important; }
-.u-static   { position: static !important; }
+.u-pos-r { position: relative !important; }
+.u-pos-s   { position: static !important; }
 
 .sr-only { position: absolute !important; width: 1px; height: 1px; margin: 0; padding: 0; border: 0; clip: rect(0,0,0,0); overflow: hidden; } // screen-reader only
 .no-js .js-only,
@@ -59,12 +60,12 @@
 
 
 // Float
-.u-pull-right  { float: right; }
-.u-pull-left   { float: left; }
+.u-fl-r, .u-pull-right  { float: right; }
+.u-fl-l, .u-pull-left   { float: left; }
 
-.u-clear-left  { clear: left; }
-.u-clear-right { clear: right; }
-.u-clear-both  { clear: both; }
+.u-cl-l  { clear: left; }
+.u-cl-r  { clear: right; }
+.u-cl-b  { clear: both; }
 .u-clearfix    { .cfx(); }
 
 .u-break { display: block; width: 100%; height: 0; clear: both; overflow: hidden; visibility: hidden; margin: 0 !important; padding: 0 !important; }
@@ -80,16 +81,14 @@
 .u-gray    { color: @color-gray !important; }
 
 // Text properties
-.u-center { text-align: center !important; }
-.u-left   { text-align: left !important; }
-.u-right  { text-align: right !important; }
+.u-ta-c, .u-center { text-align: center !important; }
+.u-ta-l, .u-left   { text-align: left !important; }
+.u-ta-r, .u-right  { text-align: right !important; }
 
-.u-nowrap { white-space: nowrap; }
+.u-whs-nw { white-space: nowrap; }
 .u-tt-u { text-transform: uppercase !important; }
 
-// Display properties
-.u-d-f { display: flex !important; }
-
+// Flex properties
 .u-ai-c { align-items: center !important; }
 
 .u-jc-c { justify-content: center !important; }
