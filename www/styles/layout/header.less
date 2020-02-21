@@ -1,4 +1,6 @@
 .header {
+	flex: 0 0 auto;
+	width: 100%;
 	background: @color-red;
 }
 
@@ -15,10 +17,6 @@
 	margin: 0 5.373% 0 0;
 	flex: 0 1 auto;
 
-	svg {
-		fill: #fff;
-	}
-
 	@media @w768 {
 		width: 130px;
 		margin-right: 2.238%;
@@ -27,11 +25,12 @@
 
 .header__logo-link {
 	display: block;
-	width: 100%;
-	position: relative;
-	padding-top: 57 / 130 * 100%;
+
+	&:before {
+		padding-top: 57 / 130 * 100%;
+	}
 }
 
 .header__logo-img {
-	.img--center;
+	fill: #fff;
 }
