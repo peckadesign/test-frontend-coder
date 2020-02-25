@@ -1,0 +1,23 @@
+.breadcrumbs {
+    margin: 0;
+    li {
+        display: inline;
+        padding: 0;
+        a {
+            font-family: Open Sans, sans-serif;
+            font-size: 10px;
+            text-decoration: none;
+            text-transform: uppercase;
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+    li+li {
+        &:before {
+            position: relative;
+            font-size: 10px;
+            content: "/\00a0";
+        }
+    }
+}

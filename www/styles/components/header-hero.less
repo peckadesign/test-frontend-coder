@@ -1,0 +1,53 @@
+.hero {
+    background-color: @color-gray;
+    padding-top: 14px;
+    padding-bottom: 20px;
+    @media @w480 {
+        padding-top: 19px;
+        padding-bottom: 60px;
+    }
+    @media @w768 {
+        padding-bottom: 71px;
+    }
+    .breadcrumbs {
+        text-align: center;
+        margin-bottom: 20px;
+        @media @w480 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        @media @w768 {
+            margin-bottom: 41px;
+        }
+    }
+    &__text {
+        h1 {
+            font-family: Open Sans, sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            margin-bottom: 9px;
+            text-align: center;
+            @media @w480 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+            @media @w768 {
+                margin-bottom: 45px;
+            }
+        }
+        p {
+            max-width: 856px;
+            margin: 0 auto;
+            font-size: 12px;
+            line-height: 21px;
+            @media @w480 {
+                font-size: 14px;
+                line-height: 27px;
+                text-align: left;
+            }
+            @media @w960 {
+                text-align: center;
+            }
+        }
+    }
+}
