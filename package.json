@@ -2,7 +2,7 @@
 	"name": "pd-example",
 	"private": true,
 	"devDependencies": {
-		"grunt": "~1.1.0",
+		"grunt": "~1.5.3",
 		"grunt-cli": "~1.3.2",
 		"time-grunt": "~2.0.0",
 		"jit-grunt": "~0.10.0",
